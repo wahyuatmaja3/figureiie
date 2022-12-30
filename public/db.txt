@@ -1,0 +1,29 @@
+# Figure
+  - id int primary key
+  - category char(3) foreign key
+  - franchise int foreign key
+  - name varchar(500)
+  - price int 
+  - image varchar(700)
+  - brand varchar(100)
+  - created_at
+
+# Franchise
+  - id int primary key
+  - name varchar(255)
+
+# Category
+  - id char(3) primary key
+  - name varchar(100)
+
+# Order
+  - id int primary key
+  - user int foreign key
+  - shipping
+  - payment
+  - order_date timestamp
+
+# Order_detail
+  - order int foreign key
+  - figure int foreign key
+  - qty shortint
