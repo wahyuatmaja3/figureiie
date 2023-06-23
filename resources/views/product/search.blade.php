@@ -27,9 +27,19 @@
             @endphp
                 <div class="card card-compact w-auto bg-base-100 shadow-sm hover:shadow-lg rounded-none" style="height: 28rem">
                     {{-- <figure class="h-4/6 image-full" style="background-image: url(https://placeimg.com/1000/800/arch)"></figure> --}}
-                    <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
-                        <img src="assets/img/figure.png" alt="Shoes" class="max-h-full" />
-                      </figure>
+                    @if (!$figure->images->isEmpty())
+                        
+                        <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
+                            <img src="{{ asset('storage') . '/' . 'figure-images/' . $figure->images->first()['name'] }}" alt="Figure" class="max-h-full" />
+                        </figure>
+                        
+                        @else
+
+                        <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
+                            <img src="assets/img/figure.png" alt="Figure" class="max-h-full" />
+                        </figure>
+
+                    @endif
                     <div class="card-body">
                         <a href='/figures/{{ $figure->slug }}' class="font-bold hover:text-accent" style="font-size: 1rem">{!! $higlight !!}</a>
                         <p class="font-bold text-lg mt-auto">{{ "Rp " . number_format($figure->price, 0, ",", ".") }}</p>

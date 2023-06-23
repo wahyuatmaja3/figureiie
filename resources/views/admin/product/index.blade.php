@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('content')
-<div class="flex flex-col justify-center h-full mt-6">
+<div class="flex flex-col justify-center h-full mt-64 mx-10>
     @if (session()->has('success'))
     <div class="alert alert-success shadow-md my-5">
         <div>
@@ -11,7 +11,7 @@
       </div>
     @endif
     <!-- Table -->
-    <div class="w-full mx-auto bg-white shadow-md rounded-sm border border-gray-200">
+    <div class="w-full mx-auto bg-white rounded-lg border ">
         <header class="px-5 py-4 border-b border-gray-100 flex justify-between">
             <h2 class="font-semibold text-gray-800">Products</h2>
             <a href="{{ url("admin/products/create") }}" class="btn btn-primary btn-sm">
@@ -46,7 +46,15 @@
                         <tr>
                             <td class="p-2 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-06.jpg" width="60" height="60" alt="Philip Harbach"></div>
+                                    @if (!$figure->images->isEmpty())
+                                    
+                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="{{ asset('storage') . '/' . 'figure-images/' . $figure->images->first()['name'] }}" width="60" height="60" alt="Philip Harbach"></div>
+                                    
+                                    @else
+
+                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="{{ url("assets/img/figure.png") }}" width="60" height="60" alt="Philip Harbach"></div>
+
+                                    @endif
                                     <div class="font-medium text-gray-800">{{ $figure->name }}</div>
                                 </div>
                             </td>

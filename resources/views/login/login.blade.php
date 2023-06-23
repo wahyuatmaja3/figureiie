@@ -22,7 +22,7 @@
                     </div>
                 @endif
 
-                <form action="/login" method="POST">
+                <form action="{{ url("/user/login") }}" method="POST">
                     @csrf
                     <div class="form-control w-full mb-2">
                         @error('email')
@@ -56,7 +56,7 @@
                 </form>
                 <p class="text-sm w-full my-3 text-center">
                     Don't have an account yet?
-                    <a href="{{ url('/signup') }}" class="link link-primary">Sign up</a>
+                    <a href="{{ url('/user/signup') }}" class="link link-primary">Sign up</a>
                 </p>
             </div>
         </div>

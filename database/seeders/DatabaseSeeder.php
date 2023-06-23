@@ -9,6 +9,7 @@ use App\Models\Figure;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Franchise;
+use App\Models\ShippingMethod;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -62,6 +63,30 @@ class DatabaseSeeder extends Seeder
 
         Category::create([
             'name' => 'Figma'
+        ]);
+
+        ShippingMethod::create([
+            'name' => 'JNE',
+            'price' => 20000,
+            'estimated' => 6
+        ]);
+
+        ShippingMethod::create([
+            'name' => 'J&T Express',
+            'price' => 18000,
+            'estimated' => 3
+        ]);
+
+        ShippingMethod::create([
+            'name' => 'Sicepat',
+            'price' => 22000,
+            'estimated' => 6
+        ]);
+
+        ShippingMethod::create([
+            'name' => 'Anteraja',
+            'price' => 25900,
+            'estimated' => 3
         ]);
         
         Figure::factory(12)->create();

@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('content')
-<div class="card w-4/6 mx-auto mt-3 bg-white shadow-xl">
+<div class="card w-full md:w-10/12 mx-auto mt-3 bg-white shadow-xl">
     <div class="card-body">
       <h2 class="card-title">Add Figure</h2>
       <form action="{{ url('admin/products') }}" method="POST" class="w-full" enctype="multipart/form-data">
@@ -39,6 +39,17 @@
               </span>
             </label>
             <input type="text" placeholder="Character name" name="chara" class="input input-bordered w-full "  value="{{ old('chara') }}"/>
+        </div>
+        <div class="form-control mb-2 w-full ">
+            <label class="label">
+              <span class="label-text">Stock</span>
+              <span class="label-text">
+                @error('stock')
+                  <p class="text-red-600">{{ $message }}</p>
+                @enderror
+              </span>
+            </label>
+            <input type="number" placeholder="stock" name="stock" class="input input-bordered w-full "  value="{{ old('stock') }}"/>
         </div>
         <div class="flex gap-2">
 

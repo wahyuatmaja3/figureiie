@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('material', 200);
             $table->string('size', 200);
             $table->string('slug');
+            $table->smallInteger('stock');
 
             $table->foreignId('brand_id');
             // $table->foreign('brand')->references('id')->on('brands');

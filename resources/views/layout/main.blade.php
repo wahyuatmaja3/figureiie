@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="lemonade" lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
+<html data-theme="winter" lang="{{ str_replace('_', '-', app()->getLocale()) }}" >
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,8 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         @vite('resources/css/app.css')
-        <script src="https://kit.fontawesome.com/27b0bc8f27.js" crossorigin="anonymous"></script>
+        <script src="{{ url("https://kit.fontawesome.com/27b0bc8f27.js") }}" crossorigin="anonymous"></script>
+        <script src="{{ url('assets/js/jquery.js') }}"></script>
         
         <!-- Styles -->
        

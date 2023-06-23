@@ -46,12 +46,17 @@
           </div>
       </label>
       <ul tabindex="0" class="mt-3 p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
-          <li>
-              <a href="{{ url('/profile') }}" class="justify-between">
+          <li class="text-neutral">
+              <a href="{{ url('/user/profile') }}" class="justify-between">
                   Profile
               </a>
           </li>
-          <form action="/logout" method="POST">
+          <li class="text-neutral">
+              <a href="{{ url('/user/order-history') }}" class="justify-between">
+                  Order History
+              </a>
+          </li>
+          <form action="{{ url("/user/logout") }}" method="POST">
               @csrf
               <button type="submit" class="btn btn-error flex justify-between w-full h-12 rounded-lg align-center p-3">
                 Logout
@@ -66,7 +71,7 @@
 
     @else
 
-    <a href="/login" class="btn btn-accent">Login</a>
+    <a href="{{ url("/user/login") }}" class="btn btn-accent">Login</a>
     
     @endauth
   </div>

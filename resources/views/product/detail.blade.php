@@ -44,6 +44,15 @@
     <div class="grow px-10 sticky">
         <p class="text-3xl text-primary font-bold mb-5">{{ $figure->name }}</p>
         <p class="text-2xl font-bold">{{ number_format($figure->price, 0, ",", ".") }}IDR</p>
+        <div class="w-full mt-6">
+
+            @if ($figure->stock >= 0)
+                <div class="badge badge-lg badge-success uppercase">In Stock</div>
+            @else
+                <div class="badge badge-lg badge-warning uppercase">pre order</div>
+            @endif
+            
+        </div>
         <p class="text-lg font-bold mt-10">Description</p>
         <hr >
         <div class="grid grid-cols-2">
@@ -89,9 +98,19 @@
         @foreach ($figures as $figure)
                 <div class="card card-compact w-auto bg-base-100 shadow-sm hover:shadow-lg rounded-none" style="height: 28rem">
                     {{-- <figure class="h-4/6 image-full" style="background-image: url(https://placeimg.com/1000/800/arch)"></figure> --}}
-                    <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
-                        <img src="{{ url('assets/img/figure.png') }}" alt="Shoes" class="max-h-full" />
-                      </figure>
+                    @if (!$figure->images->isEmpty())
+                        
+                        <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
+                            <img src="{{ asset('storage') . '/' . 'figure-images/' . $figure->images->first()['name'] }}" alt="Figure" class="max-h-full" />
+                        </figure>
+                        
+                        @else
+
+                        <figure class="px-3 py-3 h-4/6 bg-gray-100 rounded-md">
+                            <img src="{{ url("assets/img/figure.png") }}" alt="Figure" class="max-h-full" />
+                        </figure>
+
+                        @endif
                     <div class="card-body">
                         <a href='/figures/{{ $figure->slug }}' class="card-title hover:text-accent" style="font-size: 1rem">{{ $figure->name }}</a>
                         <p class="font-bold text-lg mt-auto">{{ "Rp " . number_format($figure->price, 0, ",", ".") }}</p>

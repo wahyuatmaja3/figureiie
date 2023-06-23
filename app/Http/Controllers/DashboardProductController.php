@@ -75,6 +75,7 @@ class DashboardProductController extends Controller
             "name" => "required|unique:figures,name|min:10",
             "price" => "required|integer|min:1000",
             "chara" => "required",
+            "stock" => "required|integer|min:0",
             "size" => "required|integer",
             "material" => "required",
             "brand_id" => "required|exists:brands,id",

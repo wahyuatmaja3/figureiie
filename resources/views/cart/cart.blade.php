@@ -2,7 +2,7 @@
 
 @section('container')
 
-<div class="mx-auto mt-6 flex lg:flex-nowrap flex-wrap justify-center gap-3">
+<div class="mx-auto mt-6 flex flex-wrap justify-center">
   @if ($cart->count() <= 0)
   <div class="mx-auto w-2/3">
       
@@ -11,9 +11,12 @@
       <p class="text-lg w-full text-center mb-5">You dont have any items in your cart yet!</p>
       <a href="{{ url('/') }}" class="btn btn-primary text-primary-content">Return to home</a>
   </div>
+  </div>
   @else
 
-  <table class="border-collapse w-8/12">
+  <div class="w-10/12">
+
+  <table class="border-collapse w-full mb-10">
     <thead>
         <tr>
             <th class="p-3 font-bold uppercase bg-accent text-neutral hidden lg:table-cell">Product</th>
@@ -26,8 +29,8 @@
     <tbody>
       @foreach ($cart as $item)
 
-        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0 border-y-2 border-neutral">
-            <td class="w-full lg:w-auto p-3 text-neutral text-center block lg:table-cell relative lg:static">
+        <tr onclick="document.location = '/figures/{{ $item->options->slug }}' " class="cursor-pointer bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0 border-y-2 border-gray-400 ">
+            <td  class="w-full lg:w-auto p-3 text-neutral text-center block lg:table-cell relative lg:static">
               <div class="avatar place-self-start mr-5">
                 <div class="w-80 lg:w-28 rounded-xl flex items-center justify-center">
                   @if ( is_null($item->options->img))
@@ -40,7 +43,7 @@
                   @endif
                 </div>
               </div>
-            <a href="/figures/{{ $item->options->slug }}" class="lg:text-md text-xl font-bold hover:text-secondary">{{ $item->name }}</a>
+            <p class="lg:text-md text-xl font-bold">{{ $item->name }}</p>
             </td>
             <td class="w-full lg:w-auto p-3 text-neutral text-center text-center block lg:table-cell relative lg:static">
                 <span class="lg:hidden absolute top-0 left-0 px-2 py-1 text-xs font-bold uppercase h-full ">Price</span>
@@ -59,40 +62,38 @@
 
               <form action="{{ url('cart/remove') }}" method="GET">
                 <input type="hidden" name="rowId" value="{{ $item->rowId }}">
-                <button type="submit" class="btn btn-warning btn-sm">remove</button>
+                <button type="submit" class="btn btn-warning lg:btn-ghost mx-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                  </svg>
+                  <p class="ml-3 lg:hidden">Remove</p>
+                </button>
               </form>
             </td>
             
             
         </tr>
       @endforeach
+      
+        <tr class="bg-white flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0 lg:border-y-2 border-gray-400 ">
+          <td colspan="3" class="py-6 mr-auto"><p class="w-full text-center font-bold">Total</p></td>
+          <td colspan="" class="py-6"><p class="w-full text-center font-bold">RP. {{ Cart::subtotal() }}</p></td>
+        </tr>
+
 
     </tbody>
   </table>
+  <div class="flex justify-center">
+    <a href="{{ url('/checkout') }}" class="btn btn-primary uppercase ">Checkout</a>
+
+  </div>
+
+  </div>
+
   @endif
 
-  <div class="card w-full lg:w-96 bg-accent">
-    <div class="card-body">
-      <h2 class="card-title">Order Summary</h2>
-      <div class="grid grid-cols-2">
-        <p class="font-bold">Subtotal</p>
-        <p class="text-right">Rp. {{ Cart::subtotal() }}</p>
-        
-        <p class="font-bold">Shipping</p>
-        <p class="text-right">Calculated at next step</p>
-
-        <span class="col-span-2 border-t-2 border-neutral mt-3 mb-10"></span>
-
-        <span class="font-bold w-full">Estimated total</sp>
-        <p class="text-right">Rp. {{ Cart::subtotal() }}</p>
-
-
-      </div>
-      <button class="btn btn-primary w-full uppercase mt-5">Checkout</button>
-    </div>
-  </div>
   
 </div>
-<div class="h-96 sm:h-28"></div>
+<div class="h-96 lg:h-28"></div>
 
 @endsection

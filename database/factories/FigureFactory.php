@@ -26,6 +26,7 @@ class FigureFactory extends Factory
             'material' => $this->faker->randomElement(['ABS', 'PVC']),
             'size' => $this->faker->numberBetween(100, 1000) . 'MM',
             'slug' => $this->faker->slug(),
+            'stock' => mt_rand(10, 100),
             'brand_id' => Brand::find(1),
             'franchise_id' => Franchise::find(1),
             'category_id' => Category::find(1),
