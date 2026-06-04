@@ -1,66 +1,338 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Figureiie
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/logo.png" width="150" alt="Figureiie Logo">
 </p>
 
-## About Laravel
+<p align="center">
+  <b>Anime Figure Marketplace Platform</b><br>
+  Buy, sell, and collect your favorite anime figures in one place.
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📖 About
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Figureiie is a web-based marketplace built with Laravel that allows users to buy and sell anime figures from various series, franchises, and manufacturers.
 
-## Learning Laravel
+The platform provides a modern shopping experience with product catalog browsing, shopping cart management, order processing, and seller management features.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Whether you're a casual collector or a serious anime enthusiast, Figureiie helps you discover and trade anime figures safely and conveniently.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Features
 
-## Laravel Sponsors
+### 👤 User Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- User registration & authentication
+- User profile management
+- Browse anime figure catalog
+- Search and filter products
+- Product detail pages
+- Shopping cart
+- Wishlist
+- Checkout process
+- Order history
+- Product reviews & ratings
 
-### Premium Partners
+### 🛍 Seller Features
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Seller dashboard
+- Create product listings
+- Manage inventory
+- Upload product images
+- Order management
+- Sales analytics
 
-## Contributing
+### 🛠 Admin Features
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- User management
+- Seller verification
+- Product moderation
+- Category management
+- Order monitoring
+- Platform analytics
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📦 Product Information
 
-## Security Vulnerabilities
+Each figure listing can contain:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Product name
+- Anime series
+- Character name
+- Manufacturer
+- Scale
+- Material
+- Condition
+- Price
+- Stock availability
+- Product gallery
+- Description
 
-## License
+Example categories:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Scale Figures
+- Prize Figures
+- Nendoroid
+- Figma
+- Pop Up Parade
+- Action Figures
+- Resin Statues
+
+---
+
+## 🚀 Tech Stack
+
+### Backend
+
+- Laravel
+- PHP 8+
+- MySQL
+
+### Frontend
+
+- Blade Templates
+- Bootstrap / Tailwind CSS
+- JavaScript
+
+### Development Tools
+
+- Composer
+- NPM
+- Laravel Artisan
+
+---
+
+## 📋 Requirements
+
+Before installing, make sure your environment contains:
+
+- PHP >= 8.2
+- Composer
+- MySQL / MariaDB
+- Node.js >= 18
+- NPM
+
+---
+
+## ⚙ Installation
+
+Clone repository:
+
+```bash
+git clone https://github.com/wahyuatmaja3/figureiie.git
+
+cd figureiie
+```
+
+Install dependencies:
+
+```bash
+composer install
+```
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+
+Create environment file:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+Configure database inside `.env`
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=figureiie
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run migrations:
+
+```bash
+php artisan migrate
+```
+
+(Optional) Run seeders:
+
+```bash
+php artisan db:seed
+```
+
+Build frontend assets:
+
+```bash
+npm run build
+```
+
+Run development server:
+
+```bash
+php artisan serve
+```
+
+Open:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+├── Http/
+├── Models/
+├── Services/
+
+database/
+├── migrations/
+├── seeders/
+
+resources/
+├── views/
+├── js/
+├── css/
+
+routes/
+├── web.php
+├── api.php
+```
+
+---
+
+## 🗄 Database Overview
+
+Core tables:
+
+- users
+- sellers
+- products
+- categories
+- product_images
+- carts
+- cart_items
+- orders
+- order_items
+- reviews
+- wishlists
+
+---
+
+## 🔒 Security
+
+- CSRF Protection
+- Password Hashing
+- Authentication Middleware
+- Authorization Policies
+- Input Validation
+
+---
+
+## 📸 Screenshots
+
+### Home Page
+
+![Home](docs/screenshots/home.png)
+
+### Product Detail
+
+![Product Detail](docs/screenshots/product-detail.png)
+
+### Shopping Cart
+
+![Cart](docs/screenshots/cart.png)
+
+### Seller Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+---
+
+## 🛣 Roadmap
+
+### MVP
+
+- [x] Authentication
+- [x] Product Catalog
+- [x] Shopping Cart
+- [x] Checkout
+- [x] Order Management
+
+### Future Features
+
+- [ ] Payment Gateway Integration
+- [ ] Midtrans Support
+- [ ] RajaOngkir Shipping
+- [ ] Seller Verification
+- [ ] Live Chat
+- [ ] Auction System
+- [ ] Mobile Application
+- [ ] Recommendation Engine
+- [ ] AI Figure Search
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork repository
+2. Create feature branch
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push branch
+
+```bash
+git push origin feature/new-feature
+```
+
+5. Open Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Wahyu Tri Atmaja**
+
+GitHub:
+https://github.com/wahyuatmaja3
+
+---
+
+<p align="center">
+  Made with ❤️ for Anime Figure Collectors
+</p>
