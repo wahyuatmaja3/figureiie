@@ -1,23 +1,14 @@
-# Figureiie
+---
 
-<p align="center">
-  <img src="public/logo.png" width="150" alt="Figureiie Logo">
-</p>
-
-<p align="center">
-  <b>Anime Figure Marketplace Platform</b><br>
-  Buy, sell, and collect your favorite anime figures in one place.
-</p>
+# # Figureiie
 
 ---
 
 ## 📖 About
 
-Figureiie is a web-based marketplace built with Laravel that allows users to buy and sell anime figures from various series, franchises, and manufacturers.
+**Figureiie** is a web-based marketplace built with Laravel that allows users to buy and sell anime figures from various series, franchises, and manufacturers.
 
-The platform provides a modern shopping experience with product catalog browsing, shopping cart management, order processing, and seller management features.
-
-Whether you're a casual collector or a serious anime enthusiast, Figureiie helps you discover and trade anime figures safely and conveniently.
+The platform provides a modern shopping experience with product catalog browsing, shopping cart management, order processing, and seller management features. Whether you're a casual collector or a serious anime enthusiast, Figureiie helps you discover and trade anime figures safely and conveniently.
 
 ---
 
@@ -25,134 +16,92 @@ Whether you're a casual collector or a serious anime enthusiast, Figureiie helps
 
 ### 👤 User Features
 
-- User registration & authentication
-- User profile management
-- Browse anime figure catalog
-- Search and filter products
-- Product detail pages
-- Shopping cart
-- Wishlist
-- Checkout process
-- Order history
-- Product reviews & ratings
+* **Authentication:** Secure user registration, login, and password management.
+* **Catalog Browsing:** Advanced search, multi-criteria filtering, and detailed product pages.
+* **Shopping Experience:** Fully functional shopping cart, wishlist, and streamlined checkout process.
+* **History & Feedback:** Comprehensive order history with product reviews and ratings.
 
 ### 🛍 Seller Features
 
-- Seller dashboard
-- Create product listings
-- Manage inventory
-- Upload product images
-- Order management
-- Sales analytics
+* **Dashboard:** Analytical insights on sales, revenue, and active listings.
+* **Inventory Management:** Easy creation, update, and deletion of figure listings.
+* **Media Handling:** Multi-image uploads for figure galleries.
+* **Order Processing:** Track and manage incoming orders from buyers.
 
 ### 🛠 Admin Features
 
-- User management
-- Seller verification
-- Product moderation
-- Category management
-- Order monitoring
-- Platform analytics
+* **User Control:** Manage and moderate user/seller accounts.
+* **Verification System:** Process and verify seller applications.
+* **Product Moderation:** Review and approve product listings to prevent spam.
+* **Platform Overview:** Global analytics, category management, and order monitoring.
 
 ---
 
 ## 📦 Product Information
 
-Each figure listing can contain:
+### Supported Categories
 
-- Product name
-- Anime series
-- Character name
-- Manufacturer
-- Scale
-- Material
-- Condition
-- Price
-- Stock availability
-- Product gallery
-- Description
+* 🌟 Scale Figures
+* 🎁 Prize Figures
+* 🧸 Nendoroid & Figma
+* 🚀 Pop Up Parade
+* ⚔️ Action Figures & Resin Statues
 
-Example categories:
+### Metadata Attributes
 
-- Scale Figures
-- Prize Figures
-- Nendoroid
-- Figma
-- Pop Up Parade
-- Action Figures
-- Resin Statues
+Every listing captures precise details: *Anime Series, Character Name, Manufacturer, Scale, Material, Condition (New/BIB/Loose), Price, and Stock Availability.*
 
 ---
 
 ## 🚀 Tech Stack
 
-### Backend
-
-- Laravel
-- PHP 8+
-- MySQL
-
-### Frontend
-
-- Blade Templates
-- Bootstrap / Tailwind CSS
-- JavaScript
-
-### Development Tools
-
-- Composer
-- NPM
-- Laravel Artisan
+| Backend | Frontend | Tools |
+| --- | --- | --- |
+| Core: **Laravel 10+** / **PHP 8.2+** | Templating: **Blade Templates** | Package Managers: **Composer**, **NPM** |
+| Database: **MySQL** / **MariaDB** | Styling: **Tailwind CSS** / **Bootstrap** | Environment: **Laravel Artisan** |
 
 ---
 
 ## 📋 Requirements
 
-Before installing, make sure your environment contains:
+Ensure your local development environment meets the following specifications:
 
-- PHP >= 8.2
-- Composer
-- MySQL / MariaDB
-- Node.js >= 18
-- NPM
+* **PHP** $\ge$ 8.2
+* **Composer** $\ge$ 2.0
+* **Node.js** $\ge$ 18.x & **NPM**
+* **MySQL** $\ge$ 8.0
 
 ---
 
-## ⚙ Installation
+## ⚙ Installation & Setup
 
-Clone repository:
+Follow these steps to spin up the project locally:
+
+### 1. Clone & Install Dependencies
 
 ```bash
+# Clone the repository
 git clone https://github.com/wahyuatmaja3/figureiie.git
-
 cd figureiie
-```
 
-Install dependencies:
-
-```bash
+# Install Composer & NPM dependencies
 composer install
-```
-
-Install frontend dependencies:
-
-```bash
 npm install
+
 ```
 
-Create environment file:
+### 2. Environment Configuration
 
 ```bash
+# Copy environment file
 cp .env.example .env
-```
 
-Generate application key:
-
-```bash
+# Generate application key
 php artisan key:generate
+
 ```
 
-Configure database inside `.env`
+Open your `.env` file and configure your database credentials:
 
 ```env
 DB_CONNECTION=mysql
@@ -160,38 +109,29 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=figureiie
 DB_USERNAME=root
-DB_PASSWORD=
+DB_PASSWORD=your_password
+
 ```
 
-Run migrations:
+### 3. Database & Assets Compilation
 
 ```bash
-php artisan migrate
-```
+# Run migrations and seed data
+php artisan migrate --seed
 
-(Optional) Run seeders:
-
-```bash
-php artisan db:seed
-```
-
-Build frontend assets:
-
-```bash
+# Compile frontend assets
 npm run build
+
 ```
 
-Run development server:
+### 4. Serve the Application
 
 ```bash
 php artisan serve
+
 ```
 
-Open:
-
-```text
-http://localhost:8000
-```
+Visit the local server at: [http://localhost:8000](https://www.google.com/search?q=http://localhost:8000)
 
 ---
 
@@ -199,128 +139,78 @@ http://localhost:8000
 
 ```text
 app/
-├── Http/
-├── Models/
-├── Services/
+├── Http/             # Controllers, Middleware, Requests
+├── Models/           # Eloquent Models
+└── Services/         # Business Logic Layer
 
 database/
-├── migrations/
-├── seeders/
+├── migrations/       # Database Schemas
+└── seeders/          # Dummy Data Seeders
 
 resources/
-├── views/
-├── js/
-├── css/
+├── views/            # Blade Templates
+├── js/               # JavaScript Components
+└── css/              # Stylesheets (Tailwind/Bootstrap)
 
 routes/
-├── web.php
-├── api.php
+├── web.php           # Web Routes
+└── api.php           # API Endpoints
+
 ```
 
 ---
 
-## 🗄 Database Overview
+## 🔒 Security Implementations
 
-Core tables:
-
-- users
-- sellers
-- products
-- categories
-- product_images
-- carts
-- cart_items
-- orders
-- order_items
-- reviews
-- wishlists
-
----
-
-## 🔒 Security
-
-- CSRF Protection
-- Password Hashing
-- Authentication Middleware
-- Authorization Policies
-- Input Validation
+* **CSRF Protection:** Tokens enforced on all state-changing requests.
+* **Data Security:** Strict password hashing using Bcrypt/Argon2.
+* **Access Control:** Route protection via Authentication Middleware and fine-grained Authorization Policies.
+* **Data Integrity:** Strict Form Request validation rules.
 
 ---
 
 ## 📸 Screenshots
 
-### Home Page
-
-![Home](docs/screenshots/home.png)
-
-### Product Detail
-
-![Product Detail](docs/screenshots/product-detail.png)
-
-### Shopping Cart
-
-![Cart](docs/screenshots/cart.png)
-
-### Seller Dashboard
-
-![Dashboard](docs/screenshots/dashboard.png)
+| Home Page | Product Detail |
+| --- | --- |
+|  |  |
+| **Shopping Cart** | **Seller Dashboard** |
+|  |  |
 
 ---
 
 ## 🛣 Roadmap
 
-### MVP
+### MVP (Minimum Viable Product)
 
-- [x] Authentication
-- [x] Product Catalog
-- [x] Shopping Cart
-- [x] Checkout
-- [x] Order Management
+* [x] Secure Authentication & User Profiles
+* [x] Dynamic Product Catalog & Filtering
+* [x] Shopping Cart & Checkout Flow
+* [x] Basic Seller Dashboard & Order Tracking
 
-### Future Features
+### Future Enhancements
 
-- [ ] Payment Gateway Integration
-- [ ] Midtrans Support
-- [ ] RajaOngkir Shipping
-- [ ] Seller Verification
-- [ ] Live Chat
-- [ ] Auction System
-- [ ] Mobile Application
-- [ ] Recommendation Engine
-- [ ] AI Figure Search
+* [ ] **Payment Gateway:** Integration with Midtrans.
+* [ ] **Logistics:** Automated shipping cost calculation via RajaOngkir API.
+* [ ] **Communication:** Real-time Live Chat between buyers and sellers.
+* [ ] **Gamification:** Live Auction System for rare figures.
+* [ ] **Intelligence:** AI-powered Figure Search (by Image) & Recommendation Engine.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome.
-
-1. Fork repository
-2. Create feature branch
-
-```bash
-git checkout -b feature/new-feature
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Add new feature"
-```
-
-4. Push branch
-
-```bash
-git push origin feature/new-feature
-```
-
-5. Open Pull Request
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
@@ -328,11 +218,7 @@ This project is licensed under the MIT License.
 
 **Wahyu Tri Atmaja**
 
-GitHub:
-https://github.com/wahyuatmaja3
+* GitHub: [@wahyuatmaja3](https://github.com/wahyuatmaja3)
+* LinkedIn: [Your LinkedIn (Optional)]
 
 ---
-
-<p align="center">
-  Made with ❤️ for Anime Figure Collectors
-</p>
